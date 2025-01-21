@@ -6,7 +6,7 @@ Steps to follow:
 2)Clean the data (handle missing values, remove outliers, encode categorical variables).
 3)Perform feature selection using correlation matrices or feature importance scores.
 4)Split the data into training and testing sets.
-5)Train models like Logistic Regression, Random Forest, or XGBoost.
+5)Train models using Random Forest Classifier model.
 6)Evaluate models using metrics like accuracy, precision, recall, and F1-score.
 
 Insights/Results:
