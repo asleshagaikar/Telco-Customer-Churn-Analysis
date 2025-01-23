@@ -59,11 +59,7 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
            0       0.84      0.92      0.88      1052
            1       0.66      0.49      0.56       355
 
-    accuracy                           0.81      1407
-   macro avg       0.75      0.70      0.72      1407
-weighted avg       0.80      0.81      0.80      1407
-
-Accuracy: 0.81
+    accuracy: 0.81
      ```
 
 ---
