@@ -1,27 +1,86 @@
-# Telco-Customer-Churn-Analysis
-Objective: Analyze key drivers of churn for a telecommunications company using advanced data analysis and machine learning techniques to predict whether a customer will churn.
+# README: Customer Churn Prediction with Random Forest Classifier
 
-Steps to follow:
+## Overview
+This project is a **Customer Churn Prediction** analysis for a telecommunications company using **Python** and machine learning techniques. The goal is to predict whether a customer will churn (i.e., leave the service) based on their demographic, service usage, and contract information. 
 
-1)Load the dataset and perform exploratory data analysis (EDA).
+We employ **Random Forest Classifier** for predictive modeling, alongside **Exploratory Data Analysis (EDA)** to understand the data and key factors influencing churn.
 
-2)Clean the data (handle missing values, remove outliers, encode categorical variables).
+---
 
-3)Perform feature selection using correlation matrices or feature importance scores.
+## Key Features
+- **Technologies**: Python, Pandas, Numpy, Scikit-learn, Seaborn, Matplotlib.
+- **Analysis Goals**:
+  - Identify significant features contributing to customer churn.
+  - Visualize key insights using effective plots.
+  - Build a predictive machine learning model for churn classification.
 
-4)Split the data into training and testing sets.
+---
 
-5)Train models using Random Forest Classifier model.
+## Data Preprocessing
+1. **Handling Missing Values**:
+   - Converted `TotalCharges` to numeric and dropped rows with missing values.
+2. **Encoding Target Variable**:
+   - `Churn` was converted to binary (1 for "Yes", 0 for "No").
+3. **Encoding Categorical Variables**:
+   - Dummy variables were created for all categorical features using `pd.get_dummies`.
+4. **Scaling**:
+   - Used `MinMaxScaler` to scale all features between 0 and 1.
 
-6)Evaluate model accuracy and MAE.
+---
 
-Goals:
+## Exploratory Data Analysis (EDA)
+### Insights from EDA:
+1. **Tenure vs. Churn**:
+   - Customers with shorter tenure are more likely to churn. This indicates dissatisfaction or unmet expectations among newer customers.
 
-1)Identify key drivers of churn, such as customer tenure or contract type.
-2)Achieve a model with at least 80% accuracy and actionable insights for retention strategies.
+2. **Churn by Contract Type**:
+   - Customers with month-to-month contracts are most likely to churn due to the lack of long-term commitment.
 
-Model Accuracy Output after executing script: 
+3. **Monthly Charges vs. Churn**:
+   - Higher monthly charges are associated with higher churn rates, highlighting pricing dissatisfaction.
 
-Accuracy: 80.34%
+4. **Total Charges vs. Churn**:
+   - Customers with higher total charges are more likely to churn.
 
-Mean Absolute Error (MAE): 0.1966
+---
+
+## Predictive Modeling
+### Steps:
+1. **Model**: Built a **Random Forest Classifier** with the following parameters:
+   - `n_estimators=1000`
+   - `max_leaf_nodes=30`
+   - `oob_score=True`
+2. **Performance Evaluation**:
+   - Achieved high **accuracy** and **recall** scores.
+   - Metrics:
+     ```
+      precision    recall  f1-score   support
+
+           0       0.84      0.92      0.88      1052
+           1       0.66      0.49      0.56       355
+
+    accuracy                           0.81      1407
+   macro avg       0.75      0.70      0.72      1407
+weighted avg       0.80      0.81      0.80      1407
+
+Accuracy: 0.81
+     ```
+
+---
+
+## Feature Importance
+### Key Features Contributing to Churn:
+1. **Contract Type**: Month-to-month contracts have the highest impact on churn.
+2. **Tenure**: Short tenure strongly correlates with churn.
+3. **Total Charges**: Higher accumulated charges increase churn likelihood.
+4. **Online Security & Tech Support**: Lack of these services contributes to churn.
+
+
+---
+
+## Next Steps
+- **Improving Model**:
+  - Test additional algorithms like Gradient Boosting or XGBoost.
+  - Experiment with hyperparameter tuning.
+
+---
