@@ -57,7 +57,7 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
    - `oob_score=True`
 2. **Performance Evaluation**:
    - Achieved high **accuracy** and **recall** scores.
-   - Example Metrics:
+   - Output Metrics:
      ```
      Classification Report:
               precision    recall  f1-score   support
