@@ -54,12 +54,13 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
    - Achieved high **accuracy** and **recall** scores.
    - Metrics:
      ```
-      precision    recall  f1-score   support
+     Classification Report:
+                precision    recall  f1-score   support
+    0 (No Churn)       0.86      0.93      0.89      1034
+    1 (Churn)          0.66      0.45      0.53       373
 
-           0       0.84      0.92      0.88      1052
-           1       0.66      0.49      0.56       355
+Accuracy: 0.82
 
-    accuracy: 0.81
      ```
 
 ---
