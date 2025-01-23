@@ -8,7 +8,6 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
 ---
 
 ## Key Features
-- **Dataset**: [Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn) dataset.
 - **Technologies**: Python, Pandas, Numpy, Scikit-learn, Seaborn, Matplotlib.
 - **Analysis Goals**:
   - Identify significant features contributing to customer churn.
