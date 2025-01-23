@@ -33,19 +33,15 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
 ### Insights from EDA:
 1. **Tenure vs. Churn**:
    - Customers with shorter tenure are more likely to churn. This indicates dissatisfaction or unmet expectations among newer customers.
-   - ![Tenure vs Churn](images/Tenure_vs_Churn.png)
 
 2. **Churn by Contract Type**:
    - Customers with month-to-month contracts are most likely to churn due to the lack of long-term commitment.
-   - ![Churn by Contract Type](images/Churn_by_Contract_Type.png)
 
 3. **Monthly Charges vs. Churn**:
    - Higher monthly charges are associated with higher churn rates, highlighting pricing dissatisfaction.
-   - ![Monthly Charges vs Churn](images/MonthlyCharges_vs_Churn.png)
 
 4. **Total Charges vs. Churn**:
    - Customers with higher total charges are more likely to churn.
-   - ![Total Charges vs Churn](images/TotalCharges_vs_Churn.png)
 
 ---
 
