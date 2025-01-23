@@ -8,6 +8,7 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
 ---
 
 ## Key Features
+- **Dataset**: [Telco Customer Churn](https://www.kaggle.com/blastchar/telco-customer-churn) dataset.
 - **Technologies**: Python, Pandas, Numpy, Scikit-learn, Seaborn, Matplotlib.
 - **Analysis Goals**:
   - Identify significant features contributing to customer churn.
@@ -32,15 +33,19 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
 ### Insights from EDA:
 1. **Tenure vs. Churn**:
    - Customers with shorter tenure are more likely to churn. This indicates dissatisfaction or unmet expectations among newer customers.
+   - ![Tenure vs Churn](images/Tenure_vs_Churn.png)
 
 2. **Churn by Contract Type**:
    - Customers with month-to-month contracts are most likely to churn due to the lack of long-term commitment.
+   - ![Churn by Contract Type](images/Churn_by_Contract_Type.png)
 
 3. **Monthly Charges vs. Churn**:
    - Higher monthly charges are associated with higher churn rates, highlighting pricing dissatisfaction.
+   - ![Monthly Charges vs Churn](images/MonthlyCharges_vs_Churn.png)
 
 4. **Total Charges vs. Churn**:
    - Customers with higher total charges are more likely to churn.
+   - ![Total Charges vs Churn](images/TotalCharges_vs_Churn.png)
 
 ---
 
@@ -52,15 +57,15 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
    - `oob_score=True`
 2. **Performance Evaluation**:
    - Achieved high **accuracy** and **recall** scores.
-   - Metrics:
+   - Example Metrics:
      ```
      Classification Report:
-                precision    recall  f1-score   support
-    0 (No Churn)       0.86      0.93      0.89      1034
-    1 (Churn)          0.66      0.45      0.53       373
+              precision    recall  f1-score   support
 
-Accuracy: 0.82
+           0       0.84      0.92      0.88      1052
+           1       0.66      0.49      0.56       355
 
+     Accuracy: 0.81
      ```
 
 ---
@@ -72,7 +77,6 @@ Accuracy: 0.82
 3. **Total Charges**: Higher accumulated charges increase churn likelihood.
 4. **Online Security & Tech Support**: Lack of these services contributes to churn.
 
-
 ---
 
 ## Next Steps
@@ -80,4 +84,3 @@ Accuracy: 0.82
   - Test additional algorithms like Gradient Boosting or XGBoost.
   - Experiment with hyperparameter tuning.
 
----
