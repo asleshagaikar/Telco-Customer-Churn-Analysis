@@ -72,10 +72,5 @@ We employ **Random Forest Classifier** for predictive modeling, alongside **Expl
 3. **Total Charges**: Higher accumulated charges increase churn likelihood.
 4. **Online Security & Tech Support**: Lack of these services contributes to churn.
 
----
 
-## Next Steps
-- **Improving Model**:
-  - Test additional algorithms like Gradient Boosting or XGBoost.
-  - Experiment with hyperparameter tuning.
 
