@@ -7,9 +7,10 @@ from sklearn.metrics import classification_report, confusion_matrix, recall_scor
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import seaborn as sns
+import pickle
 
 # Load dataset
-df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
+df = pd.read_csv('Customer_Churn_dataset.csv')
 print(df.head())
 print(df.columns.values)
 # Checking the data types of all the columns
@@ -18,8 +19,9 @@ print(df.dtypes)
 #-------------------------------Preprocessing-------------------------------
 # Converting Total Charges to a numerical data type and Handle missing values
 df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
+df['MonthlyCharges'] = pd.to_numeric(df['MonthlyCharges'], errors='coerce')
 print(df.isnull().sum())
-#df['TotalCharges'].fillna(df['TotalCharges'].median(), inplace=True)
+#df['TotalCharges'].fillna(df['TotalCharges'].mean(), inplace=True)
 df.dropna(inplace = True)
 
 #Remove customer IDs from the data set
@@ -32,7 +34,6 @@ df2['Churn'].replace(to_replace='No',  value=0, inplace=True)
 #Creates a new column for each unique category value, with binary values (0 or 1) indicating the presence of the category.
 df_dummies = pd.get_dummies(df2)
 print(df_dummies.head())
-print(df_dummies.columns)
 
 #------------------------------- EDA (Exploratory Data Analysis)-------------------------------
 #1) Churn vs tenure
@@ -75,7 +76,6 @@ sns.boxplot(x='Churn', y='TotalCharges', data=df)
 plt.title('TotalCharges vs. Churn')
 plt.savefig('TotalCharges_vs_Churn.png')
 # plt.show()
-
 
 #------------------------------- Predictive Modeling -------------------------------
 
@@ -124,3 +124,15 @@ sns.barplot(x='importances', y='features', data=data_sorted)
 plt.title('Feature Importances')
 plt.savefig('FeatureImportance.png')
 #plt.show()
+
+#save model
+pickle.dump(rf_model, open("rf_model.pkl", "wb"))
+# Save feature names
+feature_names = X.columns.tolist()
+pickle.dump(feature_names, open("feature_names.pkl", "wb"))
+#save feature importances
+pickle.dump(rf_model.feature_importances_, open("feature_importances.pkl","wb"))
+#save df_dummies 
+pickle.dump(df_dummies.drop(columns = ['Churn']), open("df_dummies.pkl","wb")) 
+#save scaler
+pickle.dump(scaler, open("scaler.pkl", "wb"))
